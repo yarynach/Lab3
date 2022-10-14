@@ -40,7 +40,8 @@ public class Arena {
         System.out.println("Its round num. "+round);
     }
     private void roundInfo(){
-        System.out.println("The health of first is" + F.getHealth());
-        System.out.println("The health of second is" + S.getHealth());
+
+        System.out.println("The health of first is " + F.getHealth() + "xp");
+        System.out.println("The health of second is " + S.getHealth() + "xp");
     }
 }

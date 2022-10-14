@@ -14,6 +14,7 @@ public class Droid {
     }
 
     public int getHealth() {
+        setZero();
         return health;
     }
 
@@ -30,7 +31,7 @@ public class Droid {
     }
 
     public Droid(String name, int health, int damage) {
-        this.name = "Droid" + name;
+        this.name = "Droid " + name;
         this.health = health;
         this.damage = damage;
     }
@@ -40,5 +41,10 @@ public class Droid {
     }
     public boolean isAlive(){
         return (health>0);
+    }
+    public void setZero(){
+        if(health<0){
+            health=0;
+        }
     }
 }
