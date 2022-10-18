@@ -1,18 +1,16 @@
 package com.yarynach.droidbattle.arena;
 import com.yarynach.droidbattle.droids.Droid;
-interface Arena{
-    public 
 
-}
-public class ArenaOne {
+public class Arena {
     private final Droid F;
     private final Droid S;
     private int round=0;
 
-    public ArenaOne(Droid firstDroid, Droid secondDroid) {
+    public Arena(Droid firstDroid, Droid secondDroid) {
         F = firstDroid;
         S = secondDroid;
     }
+
     public Droid start(){
         fight();
         return winner();

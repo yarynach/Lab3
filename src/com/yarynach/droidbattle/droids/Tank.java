@@ -1,13 +1,12 @@
 package com.yarynach.droidbattle.droids;
 
 import java.util.Random;
+import com.yarynach.droidbattle.Colors;
 
 public class Tank extends Droid {
     private int defence =50;
     private int counter = 0;
-    public static final String ANSI_BLUE_BACKGROUND ="\u001B[46m";
-    public static final String ANSI_GREEN_FONT = "\u001B[32m";
-    public static final String ANSI_RESET = "\u001B[0m";
+
 
     public Tank(String name) {
         super("Tank "+name,150,24);
@@ -27,8 +26,12 @@ public class Tank extends Droid {
         Random rand = new Random();
         if (rand.nextBoolean()) {
             if (defence > 0) {
-                System.out.println(ANSI_BLUE_BACKGROUND +"!!Defence to" + getName()+ "!!" +ANSI_RESET);
+                System.out.println(Colors.ANSI_BLUE_BACKGROUND +"!!Defence to" + getName()+ "!!" +Colors.ANSI_RESET);
                 defence -= damage;
+                if (defence<=0){
+                    setHealth(getHealth()+defence);
+                    defence=0;
+                }
                 System.out.println("Defence of "+getName()+defence);
                 counter++;
                 counterCheck();
@@ -40,19 +43,17 @@ public class Tank extends Droid {
     private void counterCheck(){
         if (counter==2){
             setDamage(getDamage()+3);
-            System.out.println(ANSI_GREEN_FONT + "!MORE DAMAGE TO "+getName()+"!!" + ANSI_RESET);
+            System.out.println(Colors.ANSI_GREEN_FONT + "!MORE DAMAGE TO "+getName()+"!!" + Colors.ANSI_RESET);
             counter=0;
         }
     }
     @Override
     public boolean isAlive() {
-        return (getHealth()>0 || getDefence()>0);
+        if (getHealth()<=0){ setDefence(0);}
+        return (getHealth()>0);
     }
     @Override
     public void setZero() {
         super.setZero();
-        if (defence<0){
-            defence=0;
-        }
     }
 }

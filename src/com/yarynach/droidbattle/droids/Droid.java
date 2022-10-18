@@ -47,4 +47,7 @@ public class Droid {
             health=0;
         }
     }
+    public void interact(Droid d){
+
+    }
 }

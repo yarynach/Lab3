@@ -15,6 +15,15 @@ public class Healer extends Droid {
             }
         setHealth(getHealth()-damage);
         }
+
+    @Override
+    public void interact(Droid d) {
+        super.interact(d);
+        Random rand = new Random();
+        if (rand.nextBoolean()) {
+            d.setHealth((int)(d.getHealth()+d.getHealth()*0.19));
+        }
     }
+}
 
 
