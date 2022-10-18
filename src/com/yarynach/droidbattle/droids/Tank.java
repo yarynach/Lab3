@@ -56,4 +56,13 @@ public class Tank extends Droid {
     public void setZero() {
         super.setZero();
     }
+
+    @Override
+    public String toString() {
+        return "Droid Tank "+ getName()
+                + " Health:"+ getHealth()
+                + " Damage:" + getDamage()
+                + " Defence:" + getDefence()
+                +" Superpower - more damage";
+    }
 }

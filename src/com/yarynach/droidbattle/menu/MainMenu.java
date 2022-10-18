@@ -11,6 +11,8 @@ public class MainMenu {
         menuItems.put("info", new MenuInfo());
         menuItems.put("start", new MenuStart());
         menuItems.put("exit", new MenuExit());
+        menuItems.put("create", new MainCreate());
+        menuItems.put("show", new MainShow());
     }
     public void execute(String command){
         MenuItem menuItem = menuItems.get(command);

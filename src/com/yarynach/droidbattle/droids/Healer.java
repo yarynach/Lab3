@@ -24,6 +24,14 @@ public class Healer extends Droid {
             d.setHealth((int)(d.getHealth()+d.getHealth()*0.19));
         }
     }
+
+    @Override
+    public String toString() {
+        return "Droid Healer "+ getName()
+                + " Health:"+ getHealth()
+                + " Damage:" + getDamage()
+                +" Superpower - healing";
+    }
 }
 
 

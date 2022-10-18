@@ -44,4 +44,13 @@ public class Warrior extends Droid{
         System.out.println(Colors.ANSI_CYAN_FONT+"Warrior damage is " + getDamage()+Colors.ANSI_RESET);
 
     }
+
+    @Override
+    public String toString() {
+        return "Droid Warrior  "+ getName()
+                + " Health:"+ getHealth()
+                + " Damage:" + getDamage()
+                + " Critical hit:" + getCriticalHit()
+                +" Superpower - Critical hit";
+    }
 }

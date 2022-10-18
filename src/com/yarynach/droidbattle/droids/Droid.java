@@ -50,4 +50,11 @@ public class Droid {
     public void interact(Droid d){
 
     }
+    @Override
+    public String toString(){
+        return getName()
+                + " Health:"+ getHealth()
+                + " Damage:" + getDamage();
+
+    }
 }

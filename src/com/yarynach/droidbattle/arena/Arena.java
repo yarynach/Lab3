@@ -1,7 +1,9 @@
 package com.yarynach.droidbattle.arena;
 import com.yarynach.droidbattle.droids.Droid;
 
-public class Arena {
+import java.util.concurrent.TimeUnit;
+
+public class Arena  {
     private final Droid F;
     private final Droid S;
     private int round=0;
@@ -16,17 +18,14 @@ public class Arena {
         return winner();
     }
     private Droid winner(){
+        Droid win = null;
         if (F.isAlive()){
-            return F;
+            win = F;
         }
         else if (S.isAlive()){
-            return S;
+            win = S;
         }
-        else if (S.isAlive()==F.isAlive()){
-            System.out.println("No one win");
-            return null;
-        }
-        return null;
+        return win;
     }
     private void fight(){
         do{
@@ -34,6 +33,7 @@ public class Arena {
             S.getHit(F.getDamage());
             F.getHit(S.getDamage());
             roundInfo();
+
         }while(S.isAlive() && F.isAlive());
     }
     private void round(){
@@ -41,8 +41,16 @@ public class Arena {
         System.out.println("Its round num. "+round);
     }
     private void roundInfo(){
+        try {
+    System.out.println("The health of first is " + F.getHealth() + "xp");
+    System.out.println("The health of second is " + S.getHealth() + "xp");
+    System.out.println("...");
+    Thread.sleep(700);
+        }
+        catch(InterruptedException e){
+            Thread.currentThread().interrupt();
+        }
 
-        System.out.println("The health of first is " + F.getHealth() + "xp");
-        System.out.println("The health of second is " + S.getHealth() + "xp");
     }
+
 }
