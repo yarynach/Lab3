@@ -4,6 +4,7 @@ import com.yarynach.droidbattle.droids.*;
 import com.yarynach.droidbattle.arena.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Battle {
@@ -61,27 +62,18 @@ public class Battle {
         System.out.println("Droid "+d1.getName()+" joins the game!");
         Droid d2 = droids.get(scan.nextInt()-1);
         Arena arena = new Arena(d1,d2);
-        Droid winner =arena.start();
-        if(winner!=null) {
-            System.out.println("The winner is " + winner.getName());
-        }
-        else{
-            System.out.println("No one win");
-        }
+        arena.start();
+
     }
-    public void battleGroup(){
+    public void battleTeam() {
         Droid[] team1 = new Droid[2];
         Droid[] team2 = new Droid[2];
-        team1[0] = new Tank("Monster");
-        team1[1] = new Warrior("Monster2");
-        team2[0]= new Droid("Oxana",200,16);
-        team2[1]= new Healer("Heart");
-        do{
-
-
-        }while(aliveTeam(team1)||aliveTeam(team2));
+        team1[0] = new Droid("Oxana", 40, 10);
+        team1[1] = new Droid("Oxana", 41, 10);
+        team2[0] = new Droid("Oxana", 120, 10);
+        team2[1] = new Droid("Oxana", 20, 10);
+        TeamArena arena = new TeamArena(team1[0],team1[1],team2[0],team2[1]);
+        arena.start();
     }
-    private boolean aliveTeam(Droid[] team){
-        return (team[0].isAlive()&&team[1].isAlive());
-    }
+
 }

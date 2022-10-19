@@ -17,6 +17,11 @@ public class Healer extends Droid {
         }
 
     @Override
+    protected void setZero() {
+        super.setZero();
+    }
+
+    @Override
     public void interact(Droid d) {
         super.interact(d);
         Random rand = new Random();

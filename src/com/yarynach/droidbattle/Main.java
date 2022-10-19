@@ -1,7 +1,8 @@
 package com.yarynach.droidbattle;
 
+import com.yarynach.droidbattle.droids.Droid;
 import com.yarynach.droidbattle.menu.MainMenu;
-
+import com.yarynach.droidbattle.Battle;
 import java.util.Scanner;
 
 public class Main {

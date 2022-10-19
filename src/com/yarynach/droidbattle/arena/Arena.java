@@ -4,8 +4,9 @@ import com.yarynach.droidbattle.droids.Droid;
 import java.util.concurrent.TimeUnit;
 
 public class Arena  {
-    private final Droid F;
-    private final Droid S;
+    protected final Droid F;
+    protected final Droid S;
+
     private int round=0;
 
     public Arena(Droid firstDroid, Droid secondDroid) {
@@ -13,9 +14,15 @@ public class Arena  {
         S = secondDroid;
     }
 
-    public Droid start(){
+    public void start(){
         fight();
-        return winner();
+        Droid win = winner() ;
+        if(win!=null) {
+            System.out.println("The winner is " + win.getName());
+        }
+        else{
+            System.out.println("No one win");
+        }
     }
     private Droid winner(){
         Droid win = null;
@@ -27,20 +34,24 @@ public class Arena  {
         }
         return win;
     }
+    protected void atack(Droid atacker, Droid defender){
+        defender.getHit(atacker.getDamage());
+       // defender.getHit(atacker.getDamage());
+    }
     private void fight(){
         do{
             round();
-            S.getHit(F.getDamage());
-            F.getHit(S.getDamage());
+            atack(S,F);
+            atack(F,S);
             roundInfo();
 
         }while(S.isAlive() && F.isAlive());
     }
-    private void round(){
+    protected void round(){
         round++;
         System.out.println("Its round num. "+round);
     }
-    private void roundInfo(){
+    protected void roundInfo(){
         try {
     System.out.println("The health of first is " + F.getHealth() + "xp");
     System.out.println("The health of second is " + S.getHealth() + "xp");

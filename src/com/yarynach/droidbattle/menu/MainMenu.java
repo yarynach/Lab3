@@ -13,6 +13,7 @@ public class MainMenu {
         menuItems.put("exit", new MenuExit());
         menuItems.put("create", new MainCreate());
         menuItems.put("show", new MainShow());
+        menuItems.put("team", new MenuTeam());
     }
     public void execute(String command){
         MenuItem menuItem = menuItems.get(command);

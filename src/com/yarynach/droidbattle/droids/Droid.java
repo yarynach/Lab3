@@ -42,7 +42,7 @@ public class Droid {
     public boolean isAlive(){
         return (health>0);
     }
-    public void setZero(){
+    protected void setZero(){
         if(health<0){
             health=0;
         }
