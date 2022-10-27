@@ -2,7 +2,10 @@ package com.yarynach.droidbattle.arena;
 
 import com.yarynach.droidbattle.droids.Droid;
 
+
 import java.util.Random;
+
+import static com.yarynach.droidbattle.file.FileS.print;
 
 public class TeamArena extends Arena{
     private final Droid F1;
@@ -24,21 +27,21 @@ public class TeamArena extends Arena{
     public void start() {
         Droid[] winner = fight();
         if(winner.length!=0) {
-            System.out.println("The winner is " + winner[0].getName()+"and"+winner[1].getName());
+            print("The winner is " + winner[0].getName()+"and"+winner[1].getName());
         }
         else{
-            System.out.println("No one win");
+            print("No one win");
         }
     }
 
     @Override
     protected void roundInfo() {
         try {
-            System.out.println("The health of the first command" + F.getHealth() + "xp and "
+            print("The health of the first command" + F.getHealth() + "xp and "
                     +F1.getHealth()+ "xp");
-            System.out.println("The health of the second command" + S.getHealth() + "xp and"
+            print("The health of the second command" + S.getHealth() + "xp and"
                     +S1.getHealth()+"xp");
-            System.out.println("...");
+            print("...");
             Thread.sleep(700);
         }
         catch(InterruptedException e){

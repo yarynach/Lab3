@@ -2,6 +2,9 @@ package com.yarynach.droidbattle.droids;
 
 import java.util.Random;
 import com.yarynach.droidbattle.Colors;
+
+import static com.yarynach.droidbattle.file.FileS.print;
+
 public class Warrior extends Droid{
 
     private int CriticalHit = 40;
@@ -24,7 +27,7 @@ public class Warrior extends Droid{
     private void CounterCheck(){
         if (counter==1){
             HitC();
-            System.out.println(Colors.ANSI_RED_FONT+"CRITICAL!"+Colors.ANSI_RESET);
+            print(Colors.ANSI_RED_FONT+"CRITICAL!"+Colors.ANSI_RESET);
             counter++;
         } else if (counter==2) {
             setDamage(getDamage()-getCriticalHit());
@@ -41,7 +44,7 @@ public class Warrior extends Droid{
             counter=1;
         }
         CounterCheck();
-        System.out.println(Colors.ANSI_CYAN_FONT+"Warrior damage is " + getDamage()+Colors.ANSI_RESET);
+        print(Colors.ANSI_CYAN_FONT+"Warrior damage is " + getDamage()+Colors.ANSI_RESET);
 
     }
 

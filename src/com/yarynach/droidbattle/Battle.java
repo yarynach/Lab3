@@ -1,12 +1,15 @@
 package com.yarynach.droidbattle;
 
-import com.yarynach.droidbattle.droids.*;
-import com.yarynach.droidbattle.arena.*;
+import com.yarynach.droidbattle.arena.Arena;
+import com.yarynach.droidbattle.arena.TeamArena;
+import com.yarynach.droidbattle.droids.Droid;
+import com.yarynach.droidbattle.droids.Healer;
+import com.yarynach.droidbattle.droids.Tank;
+import com.yarynach.droidbattle.droids.Warrior;
+import com.yarynach.droidbattle.file.FileS;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
-
 public class Battle {
 
     private static final ArrayList<Droid> droids = new ArrayList<>();
@@ -55,23 +58,51 @@ public class Battle {
         }
     }
     public void battle(){
+        if(droids.size()<2){
+            System.out.println("You should create more droids!");
+            return;
+        }
+        final FileS f = new FileS();
+        f.createFile();
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter index of droid you want to join this battle:");
         showDroids();
         Droid d1 = droids.get(scan.nextInt()-1);
+        droids.remove(d1);
+        showDroids();
         System.out.println("Droid "+d1.getName()+" joins the game!");
         Droid d2 = droids.get(scan.nextInt()-1);
+        droids.remove(d2);
         Arena arena = new Arena(d1,d2);
         arena.start();
+        f.closeFiel();
 
     }
     public void battleTeam() {
+        if(droids.size()<4){
+            System.out.println("You should create more droids!");
+            return;
+        }
+        Scanner scan = new Scanner(System.in);
+
         Droid[] team1 = new Droid[2];
         Droid[] team2 = new Droid[2];
-        team1[0] = new Droid("Oxana", 40, 10);
-        team1[1] = new Droid("Oxana", 41, 10);
-        team2[0] = new Droid("Oxana", 120, 10);
-        team2[1] = new Droid("Oxana", 20, 10);
+        System.out.println("Enter index of droid you want to join team 1");
+        showDroids();
+        team1[0] = droids.get(scan.nextInt()-1);
+        droids.remove(team1[0]);
+        showDroids();
+        team1[1] = droids.get(scan.nextInt()-1);
+        droids.remove(team1[1]);
+        showDroids();
+        System.out.println("Team 1: "+team1[0].getName()+team1[1].getName()+" join the game!");
+        System.out.println("Enter index of droid you want to join team 2");
+        team2[0] = droids.get(scan.nextInt()-1);
+        droids.remove(team2[0]);
+        showDroids();
+        team2[1] = droids.get(scan.nextInt()-1);
+        droids.remove(team2[1]);
+        System.out.println("Team 2: "+team2[0].getName()+team2[1].getName()+" join the game!");
         TeamArena arena = new TeamArena(team1[0],team1[1],team2[0],team2[1]);
         arena.start();
     }

@@ -1,11 +1,15 @@
 package com.yarynach.droidbattle.arena;
-import com.yarynach.droidbattle.droids.Droid;
 
-import java.util.concurrent.TimeUnit;
+import com.yarynach.droidbattle.droids.Droid;
+import com.yarynach.droidbattle.file.FileS;
+
+import static com.yarynach.droidbattle.file.FileS.print;
+
 
 public class Arena  {
     protected final Droid F;
     protected final Droid S;
+
 
     private int round=0;
 
@@ -14,14 +18,15 @@ public class Arena  {
         S = secondDroid;
     }
 
+
     public void start(){
         fight();
         Droid win = winner() ;
         if(win!=null) {
-            System.out.println("The winner is " + win.getName());
+            print("The winner is " + win.getName());
         }
         else{
-            System.out.println("No one win");
+            print("No one win");
         }
     }
     private Droid winner(){
@@ -46,16 +51,17 @@ public class Arena  {
             roundInfo();
 
         }while(S.isAlive() && F.isAlive());
+        new FileS().closeFiel();
     }
     protected void round(){
         round++;
-        System.out.println("Its round num. "+round);
+        print("Its round num. "+round);
     }
     protected void roundInfo(){
         try {
-    System.out.println("The health of first is " + F.getHealth() + "xp");
-    System.out.println("The health of second is " + S.getHealth() + "xp");
-    System.out.println("...");
+    print("The health of first is " + F.getHealth() + "xp");
+    print("The health of second is " + S.getHealth() + "xp");
+    print("...");
     Thread.sleep(700);
         }
         catch(InterruptedException e){
@@ -63,5 +69,7 @@ public class Arena  {
         }
 
     }
+
+
 
 }

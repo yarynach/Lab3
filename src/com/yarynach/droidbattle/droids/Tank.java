@@ -2,6 +2,9 @@ package com.yarynach.droidbattle.droids;
 
 import java.util.Random;
 import com.yarynach.droidbattle.Colors;
+import com.yarynach.droidbattle.file.FileS;
+
+import static com.yarynach.droidbattle.file.FileS.print;
 
 public class Tank extends Droid {
     private int defence =50;
@@ -26,13 +29,13 @@ public class Tank extends Droid {
         Random rand = new Random();
         if (rand.nextBoolean()) {
             if (defence > 0) {
-                System.out.println(Colors.ANSI_BLUE_BACKGROUND +"!!Defence to" + getName()+ "!!" +Colors.ANSI_RESET);
+                print(Colors.ANSI_BLUE_BACKGROUND +"!!Defence to" + getName()+ "!!" +Colors.ANSI_RESET);
                 defence -= damage;
                 if (defence<=0){
                     setHealth(getHealth()+defence);
                     defence=0;
                 }
-                System.out.println("Defence of "+getName()+defence);
+                print("Defence of "+getName()+defence);
                 counter++;
                 counterCheck();
                 return;
@@ -43,7 +46,7 @@ public class Tank extends Droid {
     private void counterCheck(){
         if (counter==2){
             setDamage(getDamage()+3);
-            System.out.println(Colors.ANSI_GREEN_FONT + "!MORE DAMAGE TO "+getName()+"!!" + Colors.ANSI_RESET);
+            print(Colors.ANSI_GREEN_FONT + "!MORE DAMAGE TO "+getName()+"!!" + Colors.ANSI_RESET);
             counter=0;
         }
     }

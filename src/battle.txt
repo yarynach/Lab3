@@ -1,0 +1,54 @@
+Its round num. 1
+The health of first is 127xp
+The health of second is 134xp
+...
+Its round num. 2
+[46m!!Defence toDroid Tank t1!![0m
+Defence of Droid Tank t134
+The health of first is 134xp
+The health of second is 134xp
+...
+Its round num. 3
+The health of first is 141xp
+The health of second is 118xp
+...
+Its round num. 4
+The health of first is 117xp
+The health of second is 102xp
+...
+Its round num. 5
+[46m!!Defence toDroid Tank t1!![0m
+Defence of Droid Tank t118
+[32m!MORE DAMAGE TO Droid Tank t1!![0m
+The health of first is 93xp
+The health of second is 102xp
+...
+Its round num. 6
+[46m!!Defence toDroid Tank t1!![0m
+Defence of Droid Tank t12
+The health of first is 101xp
+The health of second is 102xp
+...
+Its round num. 7
+[46m!!Defence toDroid Tank t1!![0m
+Defence of Droid Tank t10
+[32m!MORE DAMAGE TO Droid Tank t1!![0m
+The health of first is 109xp
+The health of second is 88xp
+...
+Its round num. 8
+The health of first is 79xp
+The health of second is 72xp
+...
+Its round num. 9
+The health of first is 49xp
+The health of second is 56xp
+...
+Its round num. 10
+The health of first is 19xp
+The health of second is 40xp
+...
+Its round num. 11
+The health of first is 0xp
+The health of second is 24xp
+...

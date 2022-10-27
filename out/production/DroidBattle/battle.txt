@@ -1,0 +1,58 @@
+Its round num. 1
+[36mWarrior damage is 21[0m
+[46m!!Defence toDroid Tank b1!![0m
+Defence of Droid Tank b126
+The health of the first command99xp and 126xp
+The health of the second command134xp and150xp
+...
+Its round num. 2
+[46m!!Defence toDroid Tank k1!![0m
+Defence of Droid Tank k126
+[36mWarrior damage is 21[0m
+The health of the first command78xp and 126xp
+The health of the second command118xp and126xp
+...
+Its round num. 3
+[46m!!Defence toDroid Tank k1!![0m
+Defence of Droid Tank k12
+[32m!MORE DAMAGE TO Droid Tank k1!![0m
+[36mWarrior damage is 21[0m
+The health of the first command84xp and 149xp
+The health of the second command102xp and99xp
+...
+Its round num. 4
+[36mWarrior damage is 21[0m
+The health of the first command63xp and 125xp
+The health of the second command86xp and72xp
+...
+Its round num. 5
+[36mWarrior damage is 21[0m
+[46m!!Defence toDroid Tank b1!![0m
+Defence of Droid Tank b10
+[32m!MORE DAMAGE TO Droid Tank b1!![0m
+The health of the first command69xp and 101xp
+The health of the second command70xp and71xp
+...
+Its round num. 6
+[46m!!Defence toDroid Tank k1!![0m
+Defence of Droid Tank k10
+[36mWarrior damage is 21[0m
+The health of the first command75xp and 76xp
+The health of the second command54xp and44xp
+...
+Its round num. 7
+[36mWarrior damage is 21[0m
+The health of the first command81xp and 58xp
+The health of the second command38xp and17xp
+...
+Its round num. 8
+[36mWarrior damage is 21[0m
+The health of the first command60xp and 36xp
+The health of the second command22xp and0xp
+...
+Its round num. 9
+[36mWarrior damage is 21[0m
+The health of the first command66xp and 36xp
+The health of the second command0xp and0xp
+...
+The winner is Droid Healer c1andDroid Tank k1

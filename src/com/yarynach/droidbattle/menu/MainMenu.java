@@ -8,12 +8,12 @@ public class MainMenu {
     private Map<String,MenuItem> menuItems;
     public MainMenu(){
         menuItems = new LinkedHashMap<>();
-        menuItems.put("info", new MenuInfo());
-        menuItems.put("start", new MenuStart());
-        menuItems.put("exit", new MenuExit());
-        menuItems.put("create", new MainCreate());
-        menuItems.put("show", new MainShow());
-        menuItems.put("team", new MenuTeam());
+        menuItems.put("2", new MenuStart());
+        menuItems.put("1", new MainCreate());
+        menuItems.put("3", new MainShow());
+        menuItems.put("4", new MenuTeam());
+        menuItems.put("5", new MenuRecent());
+        menuItems.put("6", new MenuExit());
     }
     public void execute(String command){
         MenuItem menuItem = menuItems.get(command);
